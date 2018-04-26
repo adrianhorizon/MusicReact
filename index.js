@@ -11,7 +11,7 @@ const app = document.getElementById('app')
 
 // render(que voy a renderizar, donde lo haré(app))
 const holamundo = <h1>hola mundo music</h1>
-render(<Media/>, app)
+render(<Media type="video" title="¿Qué es reponsive Design?" author="Adrían Caminos" image="./assets/images/covers/responsive.jpg"/>, app)
 /*
  * Otra manera de minficiarel codigo con javascript
  * ReactDOM.render(<Media/>, app)

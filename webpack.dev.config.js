@@ -21,6 +21,7 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
+            // ecmascript 6 y 7
             presets: ['es2015', 'react', 'stage-2'],
           }
         },
