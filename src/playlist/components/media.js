@@ -6,18 +6,33 @@ import './media.css'
 // podemos minificar el codigo component
 // class Media extends React.Component {
 class Media extends Component {
+    // Ecmascript 7 mas sencillo de declarar
+    state = {
+        author: 'Adrian caminos'
+    }
     /* Ecmascript 6
      * constructor(props) {
      *  super(props)
      *  Enlazar con mi clase pero es muy tedioso
      *  this.handleClick = this.handleClick.bind(this)
     } */
+
+    /* Utilizando states en vez de props
+    constructor(props) {
+        super(props)
+        this.state = {
+            author: props.author
+        } 
+    } */
     // arrow functions automatizamos 
     handleClick = (event) => {
-        console.log(this.props.image)
+       // console.log(this.props.image)
+       // Cambiar el estado de un autor con setState
+       this.setState({
+           author: 'Ricardo celis'
+       })
     }
     render() {
-        const { title, author, image } = this.props
         // atributos de styles de html y de JSX
         const styles = {
             container: {
@@ -34,13 +49,13 @@ class Media extends Component {
                 <div className="Media-cover">
                     <img
                     className="Media-image" 
-                    src={ image }
+                    src={ this.props.image }
                     alt=""
                     width={260}
                     height={160}
                     />
-                    <h3 className="Media-title">{ title }</h3>
-                    <p className="Media-autor">{ author} </p>
+                    <h3 className="Media-title">{ this.props.title }</h3>
+                    <p className="Media-autor">{ this.state.author} </p>
                 </div>
             </div>
         )
